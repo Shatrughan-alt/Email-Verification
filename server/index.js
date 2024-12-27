@@ -5,7 +5,13 @@ const cors=require('cors');
 // const { default: mongoose } = require('mongoose');
 
 app.use(express.json());
-app.use(cors());
+app.use(cors(
+    {
+        origin:["https://front-part.vercel.app/"],
+        methods:["POST","GET"],
+        credentials:true
+    }
+));
 require("./db");
 app.use(require("./Routes/router"));
 // const PORT=process.env.PORT||8080;
