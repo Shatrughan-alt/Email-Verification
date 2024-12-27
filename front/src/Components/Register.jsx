@@ -20,7 +20,7 @@ export default function Register() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const url = "http://localhost:5000/";
+            const url = "shatrughan-website.vercel.app/";
             const { data: res } = await axios.post(url, data);
             setMsg(res.message);
         } catch (error) {
