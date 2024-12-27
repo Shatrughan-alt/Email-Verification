@@ -13,7 +13,7 @@ export default function Login() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const url = "http://localhost:5000/login";
+            const url = "shatrughan-website.vercel.app/login";
             const { data: res } = await axios.post(url, data);
             localStorage.setItem("token", res.data);
             window.location = "/";
