@@ -1,36 +1,12 @@
 {
     "version": 2,
-    "name": "music-album-backend",  
     "builds": [
-        {
-            "src": "server/Routes/router.js",  
-            "use": "@vercel/node"
-        },
-        {
-            "src": "server/index.js",          
-            "use": "@vercel/node"
-        }
+        {"src":"*.js","use":"@vercel/node"}
     ],
     "routes": [
         {
-            "src": "/api/",                   
-            "dest": "/server/index.js"
-        },
-        {
-            "src": "/api/sendEmail",        
-            "dest": "/server/Email/email.js"
-        },
-        {
-            "src": "/api/user",              
-            "dest": "/server/Model/user.js"
-        },
-        {
-            "src": "/api/token",             
-            "dest": "/server/Model/token.js"
-        },
-        {
-            "src": "/(.*)",                  
-            "dest": "/server/index.js"
+            "src":"/(.*)",
+            "dest":"/"
         }
     ]
 }
