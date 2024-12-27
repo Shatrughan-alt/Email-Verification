@@ -12,9 +12,18 @@ app.use(cors(
         credentials:true
     }
 ));
-require("./db");
+const mongoose=require('mongoose');
+
+mongoose.connect(process.env.DB)
+.then(()=>{
+    console.log("Connection Successful");
+}).catch(err=>console.log(err));
 app.use(require("./Routes/router"));
 // const PORT=process.env.PORT||8080;
+
+app.get("/",async(req,res)=>{
+    res.send("Hello");
+})
 app.listen(5000,()=>{
     console.log("Server is working ");
 })
