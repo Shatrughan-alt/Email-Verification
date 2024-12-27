@@ -1,16 +1,36 @@
 {
     "version": 2,
-    "name": "music-album",
+    "name": "music-album-backend",  // Name of your project
     "builds": [
         {
-            "src": "*.js",
+            "src": "server/Routes/router.js",  // This is the route handler file
+            "use": "@vercel/node"
+        },
+        {
+            "src": "server/index.js",          // Main entry point of your application
             "use": "@vercel/node"
         }
     ],
     "routes": [
         {
-            "src": "/(.*)",
-            "dest": "/"
+            "src": "/api/",                   // Route for the main API
+            "dest": "/server/index.js"
+        },
+        {
+            "src": "/api/sendEmail",         // Route to send email
+            "dest": "/server/Email/email.js"
+        },
+        {
+            "src": "/api/user",              // Route for user-related actions
+            "dest": "/server/Model/user.js"
+        },
+        {
+            "src": "/api/token",             // Route for token-related actions
+            "dest": "/server/Model/token.js"
+        },
+        {
+            "src": "/(.*)",                  // Catch-all route
+            "dest": "/server/index.js"
         }
     ]
 }
