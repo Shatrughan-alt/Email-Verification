@@ -9,7 +9,7 @@ export default function EmailVerify() {
     useEffect(() => {
         const verifyEmailUrl = async () => {
             try {
-                const url = `http://localhost:5000/${encodeURIComponent(param.id)}/verify/${encodeURIComponent(param.token)}`;
+                const url = `shatrughan-website.vercel.app/${encodeURIComponent(param.id)}/verify/${encodeURIComponent(param.token)}`;
 
                 // const url = `http://localhost:5000/api/users/${param.id}/verify/${param.token}`;
                 const { data } = await axios.get(url);
